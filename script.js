@@ -52,6 +52,21 @@ const instructors = [
       availability: 'none',
       specialities: ['Python']
     }
-  ];
-  
+];
+
+const weekendInstructors = instructors.filter(instructor => {
+    if ((instructor.availability === 'all' || instructor.availability === 'weekend') && instructor.specialities.includes('Javascript')) {
+        return instructor
+    }
+})
+
+
+weekendInstructors.forEach(instructor => {
+    if (instructor.specialities.includes('Python')) {
+        console.log(`Hi ${instructor.name}, we inform you that this weekend you will be doing the support class and you need to prepare a Python workshop`)
+    } else {
+        console.log(`Hi ${instructor.name}, we inform you that this weekend you will be doing the support class`)
+    }
+})
+
   
